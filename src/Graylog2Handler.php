@@ -22,7 +22,7 @@ class Graylog2Handler extends AbstractHandler
 
             $loglevel = strtolower($record['level_name']);
 
-            $graylog2->{$loglevel}($message);
+            $graylog2->{$loglevel}($message,app('Illuminate\Http\Request'));
         } catch (Exception $e) {
             Log::error("cannot log error to graylog");
         }
