@@ -22,10 +22,5 @@ return [
             'host' => 'localhost',
             'port' => 12201,
         ],
-		'tcp' => [
-			'driver' => 'tcp',
-			'host' => 'localhost',
-			'port' => 12201,
-		]
     ],
 ];
