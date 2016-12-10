@@ -28,7 +28,7 @@ class Graylog2 implements Graylog2Interface
 
             $this->connections = config('graylog2.connections');
             foreach ($this->connections as $protocol => $con) {
-                switch ($con['driver']):
+                switch (strtoupper($con['driver'])) {
                     case 'UDP':
                         $transport = new UdpTransport($con['host'], $con['port'], UdpTransport::CHUNK_SIZE_LAN);
                         $this->publisher->addTransport($transport);
@@ -36,7 +36,7 @@ class Graylog2 implements Graylog2Interface
 					case 'TCP':
 						$transport = new TcpTransport($con['host'], $con['port']);
 						$this->publisher->addTransport($transport);
-                endswitch;
+                }
             }
         }
     }
