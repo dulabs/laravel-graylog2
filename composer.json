@@ -1,5 +1,5 @@
 {
-    "name": "absolute-software/laravel-graylog2",
+    "name": "dulabs/laravel-graylog2",
     "description": "A Laravel 5 package that implements the Graylog2 gelf-php lib.",
     "type": "library",
     "require": {
