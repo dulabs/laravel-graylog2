@@ -1,5 +1,5 @@
 <?php
-namespace AbsoluteSoftware\Graylog2\Interfaces;
+namespace Dulabs\Graylog2\Interfaces;
 
 use Illuminate\Http\Request;
 

@@ -12,14 +12,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Absolute Software GmbH",
-            "email": "info@absolute.de"
+            "name": "Dulabs",
+            "email": "dev@dulabs.com"
         }
     ],
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "AbsoluteSoftware\\Graylog2\\": "src"
+            "Dulabs\\Graylog2\\": "src"
         }
     }
 }

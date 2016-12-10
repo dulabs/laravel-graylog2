@@ -1,5 +1,5 @@
 <?php
-namespace AbsoluteSoftware\Graylog2;
+namespace Dulabs\Graylog2;
 
 use Illuminate\Support\ServiceProvider;
 

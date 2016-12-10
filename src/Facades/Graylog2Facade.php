@@ -1,5 +1,5 @@
 <?php
-namespace AbsoluteSoftware\Graylog2\Facades;
+namespace Dulabs\Graylog2\Facades;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 

@@ -1,10 +1,11 @@
 <?php
-namespace AbsoluteSoftware\Graylog2;
+namespace Dulabs\Graylog2;
 
-use AbsoluteSoftware\Graylog2\Interfaces\Graylog2Interface;
+use Dulabs\Graylog2\Interfaces\Graylog2Interface;
 use Gelf\Message;
 use Gelf\Publisher;
 use Gelf\Transport\UdpTransport;
+USE Gelf\Transport\TcpTransport;
 use Illuminate\Http\Request;
 use Psr\Log\LogLevel;
 
@@ -28,10 +29,13 @@ class Graylog2 implements Graylog2Interface
             $this->connections = config('graylog2.connections');
             foreach ($this->connections as $protocol => $con) {
                 switch ($con['driver']):
-                    case 'udp':
+                    case 'UDP':
                         $transport = new UdpTransport($con['host'], $con['port'], UdpTransport::CHUNK_SIZE_LAN);
                         $this->publisher->addTransport($transport);
                         break;
+					case 'TCP':
+						$transport = new TcpTransport($con['host'], $con['port']);
+						$this->publisher->addTransport($transport);
                 endswitch;
             }
         }
