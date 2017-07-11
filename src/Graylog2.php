@@ -93,6 +93,12 @@ class Graylog2 implements Graylog2Interface
             ->setTimestamp((is_null($timestamp) ? time() : $timestamp))
         ;
 
+        if(!is_null(config('graylog2.additionalFields'))) {
+            foreach (config('graylog2.additionalFields') as $field => $value) {
+                $message->setAdditional($field, $value);
+            }
+        }
+
         if(!is_null($request)) {
             $message
                 ->setAdditional('request_url', $request->url())
