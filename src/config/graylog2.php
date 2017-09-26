@@ -16,6 +16,10 @@ return [
         'version' => '',
     ],
 
+    'additionalFields' => [
+
+    ],
+
     'connections' => [
         'udp' => [
             'driver' => 'udp',
